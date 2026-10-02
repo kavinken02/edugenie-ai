@@ -1,0 +1,456 @@
+* {
+    box-sizing: border-box;
+}
+
+
+:root {
+
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    color: #172033;
+
+    background: #f4f7fb;
+}
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #e8f0ff 0,
+            transparent 34rem
+        ),
+        #f4f7fb;
+}
+
+
+.container {
+
+    width:
+        min(
+            900px,
+            calc(100% - 32px)
+        );
+
+    margin: 0 auto;
+
+    padding:
+        50px 0;
+}
+
+
+/* HERO */
+
+.hero {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.hero h1 {
+
+    font-size:
+        clamp(
+            2.8rem,
+            8vw,
+            5rem
+        );
+
+    margin:
+        12px 0;
+}
+
+
+.hero p {
+
+    color: #5d687b;
+
+    font-size: 1.08rem;
+
+    margin:
+        6px 0;
+}
+
+
+.hero .subtitle {
+
+    max-width: 650px;
+
+    margin:
+        0 auto;
+
+    line-height: 1.6;
+}
+
+
+.badge {
+
+    display:
+        inline-block;
+
+    padding:
+        7px 12px;
+
+    border-radius:
+        999px;
+
+    background:
+        #e4ebff;
+
+    color:
+        #3155b7;
+
+    font-size:
+        0.75rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.08em;
+}
+
+
+/* CARD */
+
+.card {
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.94
+        );
+
+    border:
+        1px solid #e1e7f0;
+
+    border-radius:
+        20px;
+
+    padding:
+        25px;
+
+    margin-bottom:
+        20px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(
+            24,
+            38,
+            67,
+            0.07
+        );
+}
+
+
+/* LABELS */
+
+label {
+
+    display:
+        block;
+
+    font-weight:
+        700;
+
+    margin-bottom:
+        8px;
+}
+
+
+/* INPUTS */
+
+select,
+textarea {
+
+    width: 100%;
+
+    border:
+        1px solid #ccd5e3;
+
+    border-radius:
+        12px;
+
+    padding:
+        13px 14px;
+
+    font:
+        inherit;
+
+    background:
+        white;
+
+    margin-bottom:
+        20px;
+
+    outline: none;
+}
+
+
+select:focus,
+textarea:focus {
+
+    border-color:
+        #3155b7;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(
+            49,
+            85,
+            183,
+            0.1
+        );
+}
+
+
+textarea {
+
+    resize:
+        vertical;
+
+    min-height:
+        180px;
+
+    line-height:
+        1.5;
+}
+
+
+/* BUTTON */
+
+button {
+
+    border: 0;
+
+    border-radius:
+        12px;
+
+    padding:
+        12px 18px;
+
+    font:
+        inherit;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+}
+
+
+#submitBtn {
+
+    width: 100%;
+
+    background:
+        #3155b7;
+
+    color:
+        white;
+
+    transition:
+        transform 0.15s,
+        opacity 0.15s;
+}
+
+
+#submitBtn:hover {
+
+    transform:
+        translateY(-1px);
+}
+
+
+#submitBtn:disabled {
+
+    opacity:
+        0.6;
+
+    cursor:
+        wait;
+}
+
+
+/* STATUS */
+
+.status {
+
+    min-height:
+        25px;
+
+    margin:
+        12px 0 0;
+
+    color:
+        #5d687b;
+}
+
+
+/* RESULT */
+
+.result-card h2 {
+
+    margin-top:
+        0;
+}
+
+
+.text-result {
+
+    line-height:
+        1.8;
+
+    color:
+        #293449;
+
+    font-size:
+        1rem;
+}
+
+
+/* QUIZ */
+
+.quiz-question {
+
+    padding:
+        20px 0;
+
+    border-bottom:
+        1px solid #e7ebf2;
+}
+
+
+.quiz-question:last-child {
+
+    border-bottom:
+        none;
+}
+
+
+.quiz-question h3 {
+
+    line-height:
+        1.5;
+
+    margin-top:
+        0;
+}
+
+
+.options {
+
+    display:
+        grid;
+
+    gap:
+        10px;
+}
+
+
+.option {
+
+    text-align:
+        left;
+
+    background:
+        #f2f5fa;
+
+    border:
+        1px solid #d8dfeb;
+
+    color:
+        #25314a;
+
+    transition:
+        background 0.15s;
+}
+
+
+.option:hover:not(:disabled) {
+
+    background:
+        #e9eef8;
+}
+
+
+.option:disabled {
+
+    cursor:
+        default;
+
+    opacity:
+        0.8;
+}
+
+
+.answer {
+
+    margin-top:
+        15px;
+
+    padding:
+        15px;
+
+    border-radius:
+        12px;
+
+    background:
+        #eef8f0;
+
+    line-height:
+        1.6;
+}
+
+
+.hidden {
+
+    display:
+        none;
+}
+
+
+/* MOBILE */
+
+@media (
+    max-width: 600px
+) {
+
+    .container {
+
+        padding:
+            28px 0;
+    }
+
+
+    .card {
+
+        padding:
+            18px;
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            3rem;
+    }
+
+}
